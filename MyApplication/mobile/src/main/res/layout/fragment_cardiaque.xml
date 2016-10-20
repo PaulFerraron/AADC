@@ -1,0 +1,30 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.canonico.myapplication.CardiaqueFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ImageView
+        android:layout_width="256dp"
+        android:layout_height="256dp"
+        android:id="@+id/imageView"
+        android:layout_gravity="center"
+        android:background="@drawable/heart" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="75"
+        android:id="@+id/textView3"
+        android:layout_gravity="center"
+        android:textColor="#930000" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="94dp"
+        android:text="Rytme Cardiaque"
+        android:id="@+id/buttonCardiaque"
+        android:layout_gravity="center_horizontal|bottom" />
+
+
+</FrameLayout>
