@@ -17,7 +17,10 @@
             android:title="Ajouter un contact" />
 
         <item android:id="@+id/nav_list_contacts" android:icon="@android:drawable/ic_search_category_default"
-            android:title="List des contacts" />
+            android:title="Liste des contacts" />
+
+        <item android:id="@+id/nav_list_quitter" android:icon="@android:drawable/ic_search_category_default"
+            android:title="Quitter" />
 
 <!--        <item android:id="@+id/nav_alarm" android:icon="@android:drawable/alert_light_frame"
             android:title="Alarme" />-->

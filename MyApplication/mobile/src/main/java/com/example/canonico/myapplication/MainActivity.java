@@ -18,20 +18,26 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.ListView;
 
-import com.example.canonico.myapplication.detectionchute.DetectionChute;
-
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private NavigationView navigationView;
     private DrawerLayout drawer;
     private ActionBarDrawerToggle toggle;
+    private Intent Le_Service;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        startService(new Intent(MainActivity.this, MyServicePhone.class));
+
+
+        Le_Service = new Intent(MainActivity.this, MyServicePhone.class);
+        startService(Le_Service);
+
+
+
         setContentView(R.layout.activity_main);
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -44,8 +50,6 @@ public class MainActivity extends AppCompatActivity
 
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-
-        DetectionChute detectionChute = new DetectionChute("escaliers.csv");
     }
 
     @Override
@@ -60,7 +64,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+        // Inflate the menu; this adds items to the action bar if it is present.Ff
         getMenuInflater().inflate(R.menu.main, menu);
         return true;
     }
@@ -98,6 +102,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.nav_slideshow) {
             fragment=new CardiaqueFragment();
         } else if (id == R.id.nav_manage) {
+             //accelerometre
             fragment=new AccelerometerFragment();
         }
         else if (id == R.id.nav_sms) {
@@ -109,6 +114,12 @@ public class MainActivity extends AppCompatActivity
         else if (id == R.id.nav_list_contacts) {
             fragment=new ContactFragment();
         }
+        else if (id == R.id.nav_list_quitter) {
+            stopService(Le_Service);
+            android.os.Process.killProcess(android.os.Process.myPid());
+            System.exit(1);
+        }
+
 //        else if (id == R.id.nav_alarm) {
 //            //fragment=new AlarmFragment();
 //        }
