@@ -73,7 +73,8 @@ public class AccelerometerFragment extends Fragment implements SensorEventListen
         textViewZ = (TextView) getActivity().findViewById(R.id.textViewZ);
         sensorManager = (SensorManager) getActivity().getSystemService(Context.SENSOR_SERVICE);
         accelerator = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-        sensorManager.registerListener(this, accelerator, SensorManager.SENSOR_DELAY_UI);
+        //sensorManager.registerListener(this, accelerator, SensorManager.SENSOR_DELAY_UI);
+        sensorManager.registerListener(this, accelerator, SensorManager.SENSOR_DELAY_NORMAL);
 
 
     }
